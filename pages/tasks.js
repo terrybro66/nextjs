@@ -7,7 +7,7 @@ const projects = ({ projects }) => {
     <div>
       <h1>Projects</h1>
       {projects.map((project) => (
-        <div>{project.name}</div>
+        <div key={project._id}>{project.name}</div>
       ))}
     </div>
   );

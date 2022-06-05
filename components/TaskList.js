@@ -6,7 +6,7 @@ const TaskList = ({ tasks }) => {
   return (
     <div className={styles.container}>
       {tasks.map((task) => (
-        <TaskCard task={task} />
+        <TaskCard task={task} key={task._id} />
       ))}
     </div>
   );
