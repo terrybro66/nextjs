@@ -1,0 +1,8 @@
+.addForm{
+    position: absolute;
+    top: 1.4rem;
+    left: 20rem;
+    padding:2rem;
+    border-radius: 4px;
+    background-color: #fff;
+}

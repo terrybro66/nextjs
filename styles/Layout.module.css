@@ -1,0 +1,13 @@
+.container {
+    padding: 1rem;
+    width: 1080px;
+    margin: auto;
+  }
+  .content{
+      color: white;
+    background: rgba(0, 0, 0, 0.5);
+      border-radius: 4px;
+      padding: 0.1rem 1rem;
+      margin-top: 1rem;
+      border: solid 1px #000;
+  }

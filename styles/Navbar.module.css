@@ -1,0 +1,61 @@
+.container{
+    display: flex;
+}
+.logo{
+    border: 1px solid #000;
+    border-radius: 4px;
+    width: 80px;
+    box-shadow: 0 red;
+    cursor: pointer;
+
+}
+.logoactive{
+    animation: pulsate 1.2s ease-out infinite;
+
+}
+@keyframes pulsate {
+    0%   { box-shadow: 0 0 0 red; }
+    50%  { box-shadow: 0 0 20px red; }
+    100% { box-shadow: 0 0 0 red; }
+}
+.icon{
+    font-size: 1rem;
+    font-weight: bold;
+    padding-left: 0.4rem;
+    margin-top: auto;
+    color: #000;
+    transition: 0.3s;
+}
+.icon:hover{
+    transform: scale(1.4, 1.4);
+    color: rgb(182, 1, 1);
+    cursor: pointer;
+    
+}
+
+.pages{
+    margin-left: auto;
+}
+.pagelinks{
+    color:#000;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: auto;
+    padding: 0.3rem 0.7rem;
+    background: rgba(255, 255, 255, 1);
+    border: solid 1px black;
+    border-radius: 4px;
+    margin-left: 0.6rem;
+    text-align: center;
+    transition:all 0.3s;
+}
+.pagelinks:hover{
+    color: rgb(252, 199, 25);
+    background: rgba(0, 0, 0, 0.7);
+    border: solid 1px #666;
+    transform: background-color;
+}
+.addForm{
+    position: absolute;
+    top: 22px;
+}
