@@ -4,9 +4,11 @@ import { dbConnect } from "../../../utils/db";
 dbConnect();
 
 export default async (req, res) => {
+  console.log(req);
   const {
     query: { id },
     method,
+    body,
   } = req;
 
   switch (method) {
@@ -20,10 +22,14 @@ export default async (req, res) => {
       break;
     case "PUT":
       try {
-        const task = await Task.findByIdAndUpdate(id, req.body, {
+        const task = await Task.findByIdAndUpdate(id, body, {
+          $push: {
+            times: body.value,
+          },
           new: true,
           runValidators: true,
         });
+
         return res.status(201).json(task);
       } catch (error) {
         return res.status(400).json({ msg: error.message });

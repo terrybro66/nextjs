@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import AddTask from "./AddTask";
 
 import styles from "../styles/Navbar.module.css";
 
@@ -9,11 +8,9 @@ import { FaLinkedin, FaFacebook, FaGithub } from "react-icons/fa";
 
 const Navbar = () => {
   const router = useRouter();
-  const [showTaskForm, setShowTaskForm] = useState(false);
 
   return (
     <div className={styles.container}>
-      {showTaskForm ? <AddTask /> : null}
       <div>
         <img
           src="/guerilla.jpg"
@@ -22,7 +19,6 @@ const Navbar = () => {
               ? `${styles.logo} ${styles.logoactive}`
               : styles.logo
           }
-          onClick={() => setShowTaskForm((showTaskForm) => !showTaskForm)}
           alt="Click here to add Task"
         />
       </div>
@@ -49,6 +45,11 @@ const Navbar = () => {
       <div className={styles.pagelinks}>
         <Link href="/tasks">
           <a>Tasks</a>
+        </Link>
+      </div>
+      <div className={styles.pagelinks}>
+        <Link href="/stats">
+          <a>Stats</a>
         </Link>
       </div>
     </div>

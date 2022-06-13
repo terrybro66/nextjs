@@ -6,7 +6,7 @@
     transform: translateX(-50%);
     width:40rem;
     box-shadow: 1px 1px 3px 1px rgba(5, 2, 0, 0.65), -1px -1px 3px 1px rgba(5, 3, 0, 0.62);
-
+    z-index: 10;
 }
 .addForm{
 

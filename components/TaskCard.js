@@ -1,14 +1,17 @@
+import Link from "next/link";
 import React from "react";
+import Timer from "./Timer";
 import styles from "../styles/TaskCard.module.css";
 
 const TaskCard = ({ task }) => {
   return (
     <div className={styles.card}>
-      <div className={styles.image}>
-        <img src="https://i.redd.it/b3esnz5ra34y.jpg" />
-      </div>
       <div>
-        <h5>{task.name}</h5>
+        <h2>{task.project}</h2>
+        <p>{task.task}</p>
+      </div>
+      <div className={styles.timer}>
+        <Timer task={task} />
       </div>
     </div>
   );

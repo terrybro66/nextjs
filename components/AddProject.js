@@ -1,10 +1,7 @@
-import React, { useEffect, useState, useRef } from "react";
-import axios from "axios";
-import styles from "../styles/AddTask.module.css";
+import React, { useRef } from "react";
+import styles from "../styles/AddProject.module.css";
 
-const AddTask = ({ reload }) => {
-  const [project, setProject] = useState("");
-  const [task, setTask] = useState("");
+const AddProject = ({ reload }) => {
   const form = useRef(null);
 
   const handleSubmit = async (e) => {
@@ -13,7 +10,7 @@ const AddTask = ({ reload }) => {
     const formData = new FormData(form.current);
     const plainFormData = Object.fromEntries(formData.entries());
     const formDataJsonString = JSON.stringify(plainFormData);
-    const response = await fetch("/api/tasks", {
+    const response = await fetch("/api/projects", {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -24,14 +21,14 @@ const AddTask = ({ reload }) => {
     const data = await response.json();
     reload();
   };
-
   return (
     <div className={styles.container}>
       <div className={styles.addForm}>
-        <h3>Add a task</h3>
+        <h3>Add a project</h3>
         <form ref={form} onSubmit={handleSubmit}>
-          <input type="text" name="project" />
-          <input type="text" name="task" />
+          <input type="text" name="name" />
+          <input type="text" name="description" />
+          <input type="text" name="image" />
           <input type="submit" />
         </form>
       </div>
@@ -39,4 +36,4 @@ const AddTask = ({ reload }) => {
   );
 };
 
-export default AddTask;
+export default AddProject;
